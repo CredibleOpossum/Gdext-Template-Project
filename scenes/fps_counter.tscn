@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0qo5yybb2mme"]
+
+[ext_resource type="Script" path="res://scripts/fps_counter.gd" id="1_5p53b"]
+
+[node name="fps_counter" type="RichTextLabel"]
+offset_right = 221.0
+offset_bottom = 40.0
+text = "FPS TEXT"
+script = ExtResource("1_5p53b")

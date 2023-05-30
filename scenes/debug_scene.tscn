@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqjl1ny6fw0oi"]
+
+[ext_resource type="PackedScene" uid="uid://d0qo5yybb2mme" path="res://scenes/fps_counter.tscn" id="1_u0iin"]
+[ext_resource type="Texture2D" uid="uid://bp4p5rqrre2hw" path="res://assets/icon.svg" id="2_cve8p"]
+
+[node name="debug_scene" type="Node2D"]
+
+[node name="main_behavior" type="MainBehavior" parent="."]
+
+[node name="canvas" type="CanvasLayer" parent="."]
+
+[node name="texture_rect" type="TextureRect" parent="canvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="fps_counter" parent="canvas/texture_rect" instance=ExtResource("1_u0iin")]
+layout_mode = 1
+
+[node name="main_camera" type="Camera2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, -1.90735e-06)
+rotation = 0.570087
+scale = Vector2(0.667969, 0.652344)
+texture = ExtResource("2_cve8p")
