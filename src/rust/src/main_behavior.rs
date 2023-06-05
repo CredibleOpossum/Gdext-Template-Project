@@ -9,12 +9,22 @@ pub struct MainBehavior {
 }
 
 #[cfg(not(debug_assertions))]
-fn crash_if_release() -> ! {
-    crash_if_release();
+macro_rules! crash_if_release {
+    () => {
+        #[allow(unconditional_recursion)]
+        fn recurse() {
+            recurse();
+        }
+        recurse();
+    };
 }
 
 #[cfg(debug_assertions)]
-fn crash_if_release() {}
+macro_rules! crash_if_release {
+    () => {
+        // We are in debug... let's not crash.
+    };
+}
 
 #[godot_api]
 impl Node2DVirtual for MainBehavior {
@@ -26,7 +36,7 @@ impl Node2DVirtual for MainBehavior {
             // let's make reverse engineers have a little work for their fun :), recursion makes a hard to debug error.
             // if we are in release mode, there's no reason the editor should be open, this would only occur when someone reverse
             // engineering the project uses the built binary (the only one that should be available to them) to open the project in the editor
-            crash_if_release();
+            crash_if_release!();
             // otherwise, let's just be safe and return early so this node does nothing until we actually start the project
             return;
         }
