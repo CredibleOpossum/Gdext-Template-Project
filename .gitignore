@@ -5,3 +5,4 @@ export.cfg
 export_presets.cfg
 
 /src/rust/Cargo.lock
+/src/rust/target
