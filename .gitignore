@@ -4,4 +4,4 @@
 export.cfg
 export_presets.cfg
 
-/src/Cargo.lock
+/src/rust/Cargo.lock
