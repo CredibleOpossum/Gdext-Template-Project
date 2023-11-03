@@ -24,7 +24,7 @@ layout_mode = 1
 [node name="main_camera" type="Camera2D" parent="."]
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(0, -1.90735e-06)
+position = Vector2(0, -22)
 rotation = 0.570087
 scale = Vector2(0.667969, 0.652344)
 texture = ExtResource("2_cve8p")

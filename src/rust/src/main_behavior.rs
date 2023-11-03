@@ -41,8 +41,8 @@ impl Node2DVirtual for MainBehavior {
             return;
         }
         let input = Input::singleton();
-        if input.is_action_just_pressed("input_exit".into(), false) {
-            self.get_tree().unwrap().quit(0);
+        if input.is_action_just_pressed("input_exit".into()) {
+            self.base.get_tree().unwrap().quit();
         }
     }
 }
